@@ -1,0 +1,166 @@
+/* src/components/mainnav.css */
+
+/* --- Main Sidebar Container --- */
+.sidebar {
+  width: 260px;
+  background-color: #111827; /* Dark background */
+  color: #d1d5db; /* Light text */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* --- Sidebar Header --- */
+.sidebar-header {
+  padding: 1.5rem 1.25rem;
+  border-bottom: 1px solid #374151;
+  text-align: center;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* --- Navigation Links --- */
+.sidebar-nav {
+  flex-grow: 1; /* This is key to pushing the footer to the bottom */
+  overflow-y: auto; /* Allows scrolling if content is too long */
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.sidebar-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between icon and text */
+  padding: 0.85rem 1.5rem;
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-nav li a:hover {
+  background-color: #374151;
+  color: #ffffff;
+}
+
+.sidebar-nav li a.active {
+  background-color: #1f2937;
+  color: #ffffff;
+  font-weight: 600;
+  border-left: 3px solid #3b82f6; /* Blue accent for active link */
+}
+
+/* --- User Profile Section at the Bottom --- */
+.sidebar-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #374151;
+  display: flex;
+  flex-direction: column;
+  /* This ensures the footer stays at the bottom */
+  margin-top: auto; 
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.user-profile .icon {
+  font-size: 1.8rem;
+  color: #9ca3af;
+}
+
+.user-profile .username {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1rem;
+  /* Prevents long usernames from breaking the layout */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logout-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #374151;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  color: #d1d5db;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.logout-link:hover {
+  background-color: #4b5563;
+  color: white;
+}
+
+/* --- Hamburger Menu Button (Mobile) --- */
+.hamburger-menu {
+  display: none; /* Hidden on desktop */
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  background: #1f2937;
+  border: 1px solid #374151;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* --- Responsive Styles (for screens smaller than 768px) --- */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar off-screen by default */
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Show sidebar when 'open' class is applied */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  }
+
+  .hamburger-menu {
+    display: block; /* Show hamburger button on mobile */
+  }
+}
+
+/* Ensure main content doesn't get hidden behind sidebar */
+.dashboard-container {
+  margin-left: 260px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    margin-left: 0;
+  }
+}
+
+.main-content {
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
