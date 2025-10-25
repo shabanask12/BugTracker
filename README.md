@@ -1,4 +1,4 @@
-# BugTracker
+<img width="1908" height="1084" alt="image" src="https://github.com/user-attachments/assets/9b2ff736-e539-4d90-8fe7-fe7c21bdae39" /># BugTracker
 # BugTracker - A Role-Based Access Control (RBAC) Project
 
 
@@ -72,3 +72,4 @@ Your React app should now be running on `http://localhost:3000` and connected to
 ## 📄 License
 
 This project is licensed under the MIT License.
+<img width="1908" height="1084" alt="image" src="https://github.com/user-attachments/assets/8c1348fa-32a8-4e16-8ce9-be0d62b5aec9" />
